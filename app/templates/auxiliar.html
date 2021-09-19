@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<h2>PAGINA CRIADA PARA EDITAR TRAÇOS AUXILIARES.</h2>
+
+<body>
+    <div class="container">
+        <div class = "row">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th rowspan="2" class = "align-middle">Alfa</th>
+                        <th colspan="3">Traço unitário</th>
+                        <th colspan="3">Consumo de materiais</th>
+                        <th colspan="2">Acréscimos</th>
+                        <th rowspan="2">Consumo de água para atingir o abatimento (kg)</th>
+                        <th rowspan="2"></th>
+                        <th rowspan="2"></th><tr>
+                        <th>Cimento</th>
+                        <th>Areia</th>
+                        <th>Brita</th>
+                        <th>Cimento</th>
+                        <th>Areia</th>
+                        <th>Brita</th>
+                        <th>Cimento</th>
+                        <th>Areia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <form method="POST" action="/agua">
+                    <tr>
+                        <td align=center>{{ traco_rico.alfa }}</td>
+                        <td align=center>1</td>
+                        <td align=center>{{ traco_rico.a_unitario }}</td>
+                        <td align=center>{{ traco_rico.b_unitario }}</td>
+                        <td align=center>{{ traco_rico.c_massa }}</td>
+                        <td align=center>{{ traco_rico.a_massa }}</td>
+                        <td align=center>{{ traco_rico.b_massa }}</td>
+                        <td align=center>{{ traco_rico.c_acr }}</td>
+                        <td align=center>{{ traco_rico.a_acr }}</td>
+                        <td><input type="hidden" value="{{ alfa_ideal.alfa }}" name="valor_alfa_antigo">
+                        <input type="text" size="3" class="form-control-sm" value="{{ alfa_ideal.alfa }}" name="valor_alfa_novo"></td>
+                        <td><input type="submit" value="Update"></td>
+                        <td><a href="/piloto/{{ alfa_ideal.id }}" 
+                        class="btn btn-danger btn-sm">DELETAR</a></td>
+                    </form>
+                    </tr>
+                </tbody>
+                <br>
+            </table>
+
+            <h5>
+                Traço PILOTO<br>
+                m = {{ valores_dosagem.rico }}<br>
+                Slump = {{ valores_dosagem.slump }} mm
+            </h5><br>
+
+            <div>
+            </div>
+
+
+            <br>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th rowspan="2" class = "align-middle">Alfa</th>
+                        <th colspan="3">Traço unitário</th>
+                        <th colspan="3">Consumo de materiais</th>
+                        <th colspan="2">Acréscimos</th>
+                        <th rowspan="2">Consumo de água para atingir o abatimento (kg)</th>
+                        <th rowspan="2"></th>
+                        <th rowspan="2"></th><tr>
+                        <th>Cimento</th>
+                        <th>Areia</th>
+                        <th>Brita</th>
+                        <th>Cimento</th>
+                        <th>Areia</th>
+                        <th>Brita</th>
+                        <th>Cimento</th>
+                        <th>Areia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <form method="POST" action="/agua">
+                    <tr>
+                        <td align=center>{{ traco_pobre.alfa }}</td>
+                        <td align=center>1</td>
+                        <td align=center>{{ traco_pobre.a_unitario }}</td>
+                        <td align=center>{{ traco_pobre.b_unitario }}</td>
+                        <td align=center>{{ traco_pobre.c_massa }}</td>
+                        <td align=center>{{ traco_pobre.a_massa }}</td>
+                        <td align=center>{{ traco_pobre.b_massa }}</td>
+                        <td align=center>{{ traco_pobre.c_acr }}</td>
+                        <td align=center>{{ traco_pobre.a_acr }}</td>
+                        <td><input type="hidden" value="{{ alfa_ideal.alfa }}" name="valor_alfa_antigo">
+                        <input type="text" size="3" class="form-control-sm" value="{{ alfa_ideal.alfa }}" name="valor_alfa_novo"></td>
+                        <td><input type="submit" value="Update"></td>
+                        <td><a href="/piloto/{{ alfa_ideal.id }}" 
+                        class="btn btn-danger btn-sm">DELETAR</a></td>
+                    </form>
+                    </tr>
+                </tbody>
+                <br>
+            </table>
+            <h5>
+                Traço PILOTO<br>
+                m = {{ valores_dosagem.pobre }}<br>
+                Slump = {{ valores_dosagem.slump }} mm
+            </h5>
+
+        </div>
+    </div>
+</body>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

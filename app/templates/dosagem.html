@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Definir parametros da dosagem!</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }} 
+        <p>Nesta aba seram definidos as variáveis do ensaio!<br>
+            <br>
+            {{ form.piloto.label }}<br>
+            1 : {{ form.piloto(size=1) }}
+            <br>
+            {{ form.rico.label }}<br>
+            1 : {{ form.rico(size=1) }}
+            <br>
+            {{ form.pobre.label }}<br>
+            1 : {{ form.pobre(size=1) }}
+            <br>
+            <br>
+            {{ form.cp.label }}<br>
+            {{ form.cp(size=3) }}
+            <br>
+            <br>
+            {{ form.pesobrita.label }}<br>
+            {{ form.pesobrita(size=3) }} kg
+            <br>
+            <br>
+            {{ form.slump.label }}<br>
+            {{ form.slump(size=3) }} mm
+            <br>
+            <br>
+        </p>
+        <p>{{ form.submit() }}</p>
+        
+
+        {% for valor in padrao_salvos %}
+        <p>        
+        {{ valor }}<a href="/dosagem/{{ valor.id }}" 
+            class="btn btn-outline-danger btn-sm">DELETAR</a>
+        {% endfor %}
+
+        </p>
+
+    </form>    
+{% endblock %}
